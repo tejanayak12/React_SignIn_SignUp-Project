@@ -47,7 +47,7 @@ const Home = () => {
         } else if(password.length < 5) {
             alert("PassWord Sholud Be Greater Than Five...")
         }else {
-            console.log("The Data Shared By U With us was Succes...");
+            alert("The Data Shared By U With us was Succes...");
         }
     }
 
