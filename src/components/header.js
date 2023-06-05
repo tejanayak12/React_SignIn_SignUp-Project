@@ -3,19 +3,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 
-const Header = () => {
+const header = () => {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Container>
-                <Navbar.Brand href="#home">User Regesteration</Navbar.Brand>
-                <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">About</Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>
+        <>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home">User Registration</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="#pricing">About</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
+
+        </>
     )
 }
 
-export default Header;
+export default header
