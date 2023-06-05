@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Sign_image from './Sign_image';
+import { NavLink } from 'react-router-dom';
 
 
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
         date: "",
         password: ""
     });
+
+    const [data , setData] = useState([]);
 
     console.log(InputValue);
 
@@ -44,10 +47,12 @@ const Home = () => {
             alert("date Field Is Required...")
         } else if (password === '') {
             alert("Please Enter Your Password...")
-        } else if(password.length < 5) {
+        } else if (password.length < 5) {
             alert("PassWord Sholud Be Greater Than Five...")
-        }else {
+        } else {
             alert("The Data Shared By U With us was Succes...");
+
+            localStorage.setItem("userdata" ,JSON.stringify([...data,InputValue]));
         }
     }
 
@@ -82,7 +87,7 @@ const Home = () => {
                             Submit
                         </Button>
                     </Form>
-                    <p className='mt-3'>Already Have an Account Pls <span>SignIn</span></p>
+                    <p className='mt-3'>Already Have an Account Pls <span><NavLink to={"/login"}>SignIn</NavLink></span></p>
 
                 </div>
                 <Sign_image />
