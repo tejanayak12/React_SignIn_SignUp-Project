@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState ,} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Sign_image from './Sign_image';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+    const history = useNavigate();
 
     const [InputValue, SetInputValue] = useState({
         email: "",
@@ -54,6 +57,10 @@ const Login = () => {
                     alert("Invalid Details...")
                 }else {
                     console.log("login Success..")
+
+                    localStorage.setItem("user_login" , JSON.stringify(userlogin))
+                    
+                    history("/details")
                 }
             }
            
@@ -79,10 +86,10 @@ const Login = () => {
                                 Submit
                             </Button>
                         </Form>
-                        <p className='mt-3'>Already Have an Account Pls <span>SignIn</span></p>
+                        
 
                     </div>
-                    *<Sign_image />
+                    <Sign_image />
                 </section>
             </div>
 
